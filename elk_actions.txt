@@ -1,0 +1,2 @@
+kubectl port-forward deployment/kibana-kibana 5601 --namespace=kube-system
+kubectl port-forward service/elasticsearch-master 9200  --namespace=kube-system

@@ -1,0 +1,48 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: elasticsearch
+    meta.helm.sh/release-namespace: kube-system
+  creationTimestamp: "2022-02-13T11:29:06Z"
+  labels:
+    app: elasticsearch-master
+    app.kubernetes.io/managed-by: Helm
+    chart: elasticsearch
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-master
+  namespace: kube-system
+  resourceVersion: "5489"
+  uid: 881cef0a-a5ba-4b76-bb7d-e7a6a852055c
+spec:
+  clusterIP: 10.109.137.29
+  clusterIPs:
+  - 10.109.137.29
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 9200
+    protocol: TCP 
+    targetPort: 9200
+    nodePort: 30920
+  - name: transport
+    port: 9300
+    protocol: TCP 
+    targetPort: 9300
+    nodePort: 30930
+  selector:
+    app: elasticsearch-master
+    chart: elasticsearch
+    release: elasticsearch
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
