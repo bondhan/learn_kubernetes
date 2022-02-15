@@ -9,10 +9,10 @@ esJavaOpts: "-Xmx2g -Xms2g"
 resources:
   requests:
     cpu: "100m"
-    memory: "1024M"
+    memory: "4096M"
   limits:
     cpu: "1000m"
-    memory: "1024M"
+    memory: "4096M"
 
 # Request smaller persistent volumes.
 volumeClaimTemplate:
@@ -20,8 +20,12 @@ volumeClaimTemplate:
   storageClassName: "standard"
   resources:
     requests:
-      storage: 500M
+      storage: 1024M
 
 #replicas: 1
 #minimumMasterNodes: 1
 #clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
+
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
