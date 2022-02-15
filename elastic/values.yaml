@@ -3,7 +3,7 @@
 antiAffinity: "soft"
 
 # Shrink default JVM heap.
-esJavaOpts: "-Xmx256m -Xms256m"
+esJavaOpts: "-Xmx2g -Xms2g"
 
 # Allocate smaller chunks of memory per pod.
 resources:
