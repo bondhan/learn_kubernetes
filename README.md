@@ -82,6 +82,15 @@ kubectl port-forward service/elasticsearch-master 9200  --namespace=kube-system
 
 ```
 
+### Minikube dashboard
+
+Viewing the minikube cluster through browser
+
+```bash
+minikube dashboard
+
+```
+
 ### Minikube stop & delete
 
 if you want to release resource for another time
