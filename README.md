@@ -54,6 +54,7 @@ kubectl apply -f fluentd/fluentd-daemonset.yaml
 ### Install elastic search
 
 ```bash
+helm repo add elastic https://helm.elastic.co
 helm install elasticsearch elastic/elasticsearch  -f elastic/values.yaml --namespace=kube-system   --wait && \
 kubectl delete service/elasticsearch-master -n kube-system && \
 kubectl apply -f elastic/elastic.yaml
